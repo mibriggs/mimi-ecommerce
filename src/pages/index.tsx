@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import { trpc } from '@/utils/trpc'
-import NavBar from '@/components/Navbar';
 
 const inter = Inter({ subsets: ['latin'] })
 

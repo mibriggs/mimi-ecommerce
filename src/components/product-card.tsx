@@ -1,4 +1,5 @@
 import { useState } from "react";
+import EditQuantityButton from "./edit-quantity";
 
 const ProductCard = () => {
     const [quantity, setQuantity] = useState<number>(0);
@@ -24,7 +25,9 @@ const ProductCard = () => {
             <div>Price?</div>
             <div className="flex flex-row">
                 <button className="w-8 bg-red-600 rounded-md" onClick={() => updateQuantity(false)}> - </button>
+                {/* <EditQuantityButton color="red-600" isIncrease={true} symbol="-" /> */}
                 <div>{quantity}</div>
+                {/* <EditQuantityButton color="green-600" isIncrease={true} symbol="+" /> */}
                 <button className="w-8 bg-green-600 rounded-md" onClick={() => updateQuantity(true)}> + </button>
             </div>
             <button>Add to cart</button>

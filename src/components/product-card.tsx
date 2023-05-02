@@ -1,7 +1,8 @@
 import { useState } from "react";
 
 const ProductCard = () => {
-    const [quantity, setQuantity] = useState(0);
+    const [quantity, setQuantity] = useState<number>(0);
+    
     const updateQuantity = (isIncrease: boolean) => {
         if (isIncrease) {
             if (quantity < 100) {
@@ -13,10 +14,10 @@ const ProductCard = () => {
                 setQuantity(quantity-1);
             }
         }
-        // isIncrease? setQuantity(quantity+1) : setQuantity(quantity-1);
     }
+
     return (
-        <div className="bg-white text-gray-900 w-fit flex flex-col flex-wrap items-center m-8 p-5 rounded-2xl">
+        <div className="flex flex-col flex-wrap bg-white text-gray-900 w-fit items-center m-8 p-5 rounded-2xl">
             <h1>Product Name</h1>
             <div>Product Image?</div>
             <div>Product Description</div>
@@ -26,7 +27,7 @@ const ProductCard = () => {
                 <div>{quantity}</div>
                 <button className="w-8 bg-green-600 rounded-md" onClick={() => updateQuantity(true)}> + </button>
             </div>
-            <div>Add to cart</div>
+            <button>Add to cart</button>
         </div>
     );
 };

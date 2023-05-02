@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export const NavBar = () => {
     return (
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center justify-evenly">
             <div><Link href="/">Home</Link></div>
             <div><Link href="/products">Products</Link></div>
             <div><Link href="/about">About Us</Link></div>

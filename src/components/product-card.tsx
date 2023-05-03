@@ -1,5 +1,5 @@
 import { useState } from "react";
-import EditQuantityButton from "./edit-quantity";
+// import EditQuantityButton from "./edit-quantity";
 
 const ProductCard = () => {
     const [quantity, setQuantity] = useState<number>(0);

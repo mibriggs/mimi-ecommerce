@@ -1,24 +1,24 @@
-import { Inter } from 'next/font/google'
-import { trpc } from '@/utils/trpc'
+import { Inter } from 'next/font/google';
+import { trpc } from '@/utils/trpc';
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
-  const greetingQuery = trpc.getGreeting.useQuery();
-  
-  if (greetingQuery.isLoading) {
-    return <span>Loading...</span>
-  }
+	const greetingQuery = trpc.getGreeting.useQuery();
 
-  if (greetingQuery.isError) {
-    return <span>An Error Occurred</span>
-  }
+	if (greetingQuery.isLoading) {
+		return <span>Loading...</span>;
+	}
 
-  return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
-    >
-      {greetingQuery.data}
-    </main>
-  )
+	if (greetingQuery.isError) {
+		return <span>An Error Occurred</span>;
+	}
+
+	return (
+		<main
+			className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
+		>
+			{greetingQuery.data}
+		</main>
+	);
 }

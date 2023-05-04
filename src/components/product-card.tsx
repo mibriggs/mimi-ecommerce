@@ -27,8 +27,7 @@ const ProductCard = () => {
 					className='w-8 rounded-md bg-red-600'
 					onClick={() => updateQuantity(false)}
 				>
-					{' '}
-					-{' '}
+					-
 				</button>
 				{/* <EditQuantityButton color="red-600" isIncrease={true} symbol="-" /> */}
 				<div>{quantity}</div>
@@ -37,8 +36,7 @@ const ProductCard = () => {
 					className='w-8 rounded-md bg-green-600'
 					onClick={() => updateQuantity(true)}
 				>
-					{' '}
-					+{' '}
+					+
 				</button>
 			</div>
 			<button>Add to cart</button>

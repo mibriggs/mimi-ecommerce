@@ -21,8 +21,7 @@ const EditQuantityButton = (props: EditQuantityButtonProps) => {
 	return (
 		// <button className="w-8 bg-green-600 rounded-md" onClick={() => updateQuantity(true)}> + </button>
 		<button className={`w-8 bg-${props.color} rounded-md`}>
-			{' '}
-			{props.symbol}{' '}
+			{props.symbol}
 		</button>
 	);
 };

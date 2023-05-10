@@ -42,6 +42,5 @@ const ProductCard = () => {
 			<button>Add to cart</button>
 		</div>
 	);
-};
 
 export default ProductCard;

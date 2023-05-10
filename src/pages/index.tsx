@@ -21,4 +21,4 @@ export default function Home() {
 			{greetingQuery.data}
 		</main>
 	);
-}
+};

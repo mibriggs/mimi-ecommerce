@@ -24,6 +24,5 @@ const EditQuantityButton = (props: EditQuantityButtonProps) => {
 			{props.symbol}
 		</button>
 	);
-};
 
 export default EditQuantityButton;

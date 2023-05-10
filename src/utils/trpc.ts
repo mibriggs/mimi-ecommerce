@@ -38,6 +38,12 @@ export const trpc = createTRPCNext<AppRouter>({
 					//   },
 				}),
 			],
+			headers() {
+				if (ctx?.req) {
+					return {... ctx.req.headers};
+				}
+				return {};
+			}
 		};
 	},
 	/**

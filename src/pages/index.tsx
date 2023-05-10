@@ -5,6 +5,7 @@ const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
 	const greetingQuery = trpc.getGreeting.useQuery();
+	const userMutation = trpc.user.createUser.useMutation();
 
 	if (greetingQuery.isLoading) {
 		return <span>Loading...</span>;

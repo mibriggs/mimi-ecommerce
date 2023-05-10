@@ -1,4 +1,4 @@
-import Layout from '@/components/layout';
+import Layout from '@/pages/layout';
 import '@/styles/globals.css';
 import { trpc } from '@/utils/trpc';
 import type { AppProps, AppType } from 'next/app';

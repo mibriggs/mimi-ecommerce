@@ -15,6 +15,7 @@ export const NavBar = () => {
 			<div>
 				<Link href='/contact-us'>Contact Us</Link>
 			</div>
+			<div>Donate</div> {/*Button to be added later*/}
 			<button
 				className='w-40 rounded-full bg-amber-300 p-5 text-stone-50'
 				onClick={() => console.log('Button Clicked')}

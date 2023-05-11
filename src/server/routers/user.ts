@@ -6,12 +6,13 @@ export const userRouter = router({
     .input(z.object({
         name: z.string().min(1)
     }))
-    .mutation(({input, ctx}) => {
+    .mutation(async ({input, ctx}) => {
         const name = input.name;
-        const newUser = ctx.prisma.user.create({
+        const newUser = await ctx.prisma.user.create({
             data: {
                 name: name
             }
-        })
+        });
+        return newUser;
     }),
 });

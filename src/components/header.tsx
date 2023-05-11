@@ -4,7 +4,7 @@ const customFont = localFont({ src: '../media/Mimi-Regular.ttf' });
 
 export const HeaderComponent = () => {
     return (
-        <div className={`bg-mimilicious p-8 text-center text-eggshell ${customFont.className} sm:text-3xl md:text-5xl lg:text-8xl`}>
+        <div className={`bg-mimilicious p-8 text-center text-eggshell ${customFont.className} text-5xl sm:text-6xl md:text-7xl lg:text-8xl`}>
             MimiGurumi&apos;s
         </div>
     );

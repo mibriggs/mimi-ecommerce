@@ -8,11 +8,12 @@ export const userRouter = router({
     }))
     .mutation(async ({input, ctx}) => {
         const name = input.name;
-        const newUser = await ctx.prisma.user.create({
-            data: {
-                name: name
-            }
-        });
-        return newUser;
+        // const newUser = await ctx.prisma.user.create({
+        //     data: {
+        //         firstName: name,
+                
+        //     }
+        // });
+        // return newUser;
     }),
 });

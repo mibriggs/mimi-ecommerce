@@ -11,6 +11,46 @@ datasource db {
 }
 
 model User {
-  id   String @id @default(uuid())
-  name String
+  id          String     @id @default(uuid())
+  email       String     @unique
+  isAdmin     Boolean    @default(false)
+  orders      Delivery[]
+  firstName   String
+  lastName    String
+  phoneNumber String?
+
+  @@map("users")
+}
+
+model Product {
+  id            String     @id @default(uuid())
+  quantity      Int        @default(0)
+  princeInCents Int        @default(0)
+  deliveries    Delivery[]
+  name          String
+  description   String?
+  imageLink     String?
+
+  @@map("products")
+}
+
+model Delivery {
+  id              String    @id @default(uuid())
+  status          Status    @default(Pending)
+  buyer           User      @relation(fields: [buyerId], references: [id])
+  products        Product[]
+  deliveryAddress String
+  itemCount       Int
+  buyerId         String
+  orderedAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+
+  @@map("deliveries")
+}
+
+enum Status {
+  Pending
+  Shipped
+  Transit
+  Delivered
 }

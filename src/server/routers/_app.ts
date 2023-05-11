@@ -1,10 +1,16 @@
 import { z } from 'zod';
 import { publicProcedure, router } from '../trpc';
+import { userRouter } from './user';
+import { productRouter } from './product';
+import { deliveryRouter } from './delivery';
 
 export const appRouter = router({
-	getGreeting: publicProcedure.query(() => {
+	getGreeting: publicProcedure.query(({ctx}) => {
 		return 'Hello Mimi';
 	}),
+	user: userRouter,
+	product: productRouter,
+	delivery: deliveryRouter,
 });
 
 export type AppRouter = typeof appRouter;

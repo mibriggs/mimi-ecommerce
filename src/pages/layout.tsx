@@ -8,8 +8,8 @@ import HamburgerNavBar from '@/components/hamburger-nav-bar';
 const HeaderAndHamburger = () => {
 	return (
 	<div className='flex flex-row'>
-		<HeaderComponent />
 		<HamburgerNavBar />
+		<HeaderComponent />
 	</div>);
 };
 

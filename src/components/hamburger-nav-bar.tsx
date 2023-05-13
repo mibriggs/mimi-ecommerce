@@ -14,26 +14,35 @@ const itim = Itim({
     subsets: ['latin']
 });
 
-
 const HamburgerNavBar = () => {
-    const router = useRouter();
-    const [isOpen, setIsOpen] = useState(false);
-    
+    const router = useRouter();    
     const handleClick = (key: string, close: () => void) => {
         router.push(key);
         close();
     }
+
+    const handleClassName = (isEntering: boolean, isExiting: boolean): string => {
+        const baseName: string = 'fixed top-5 bottom-0 right-0 bg-eggshell rounded-tl-3xl rounded-bl-3xl w-7/12 p-8 text-black';
+        if (isEntering) {
+            const newString = 'transition ease-in duration-5000 delay-1000 '.concat(baseName);
+            console.log(newString);
+            return newString;
+        }
+        return baseName;
+    }
+
     //! This is incomplete!!!!!!
+    //! According to chrome this isn't yet compatible with galaxy fold's hoe ass
     return (
         <div className={`md:hidden flex flex-row bg-mimilicious ${customFont.className} text-3xl items-center justify-between`}>
-            <Image src={MimiIcon} alt={'Gurumi Icon'} width={79} height={75} quality={100} className='rotate-15' />
+            <Image src={MimiIcon} alt={'Gurumi Icon'} width={79} height={75} quality={100} style={{transform: 'rotate(-15deg)'}} />
             MimiGurumi&apos;s            
             <DialogTrigger>
-                <Button onPress={() => setIsOpen(true)} >
+                <Button>
                     <Image src={HamburgerIcon} alt='Hamburger Menu Button' quality={100} className='pr-3' />
                 </Button>
                 <ModalOverlay className='fixed inset-0 bg-black bg-opacity-50 backdrop-blur-md'>
-                    <Modal isDismissable isOpen={isOpen} onOpenChange={() => setIsOpen(false)} className='fixed top-5 bottom-0 right-0 bg-eggshell rounded-tl-3xl rounded-bl-3xl w-7/12 p-8 text-black'>
+                    <Modal className={({isEntering, isExiting}) => handleClassName(isEntering, isExiting)}>
                         <Dialog>
                             {({close}) => 
                             <div className={`${itim.className} flex flex-col text-xl`}>

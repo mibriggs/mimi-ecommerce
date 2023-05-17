@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export const NavBar = () => {
 	return (
-		<div className=' max-md:hidden flex flex-row items-center justify-between bg-white px-3 py-4 text-black'>
+		<div className=' flex flex-row items-center justify-between bg-white px-3 py-4 text-black max-md:hidden'>
 			<div>
 				<Link href='/'>Home</Link>
 			</div>

@@ -23,22 +23,11 @@ const AuthShowcase: React.FC = () => {
 };
 
 const Home: NextPage = () => {
-	const greetingQuery = trpc.getGreeting.useQuery();
-
-	if (greetingQuery.isLoading) {
-		return <span>Loading...</span>;
-	}
-
-	if (greetingQuery.isError) {
-		return <span>An Error Occurred</span>;
-	}
-
 	return (
 		<main
 			className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
 		>
 			<AuthShowcase />
-			{greetingQuery.data}
 		</main>
 	);
 };

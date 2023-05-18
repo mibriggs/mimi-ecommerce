@@ -50,16 +50,6 @@ model VerificationToken {
 }
 
 model User {
-  // id          String     @id @default(cuid())
-  // email       String     @unique
-  // isAdmin     Boolean    @default(false)
-  // orders      Delivery[]
-  // firstName   String?
-  // lastName    String?
-  // phoneNumber String?
-  // accounts    Account[]
-  // sessions    Session[]
-
   id            String     @id @default(cuid())
   email         String?    @unique
   isAdmin       Boolean    @default(false)

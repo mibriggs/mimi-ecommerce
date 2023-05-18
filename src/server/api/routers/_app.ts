@@ -5,9 +5,6 @@ import { productRouter } from './product';
 import { deliveryRouter } from './delivery';
 
 export const appRouter = router({
-	getGreeting: publicProcedure.query(({ ctx }) => {
-		return 'Hello Mimi';
-	}),
 	user: userRouter,
 	product: productRouter,
 	delivery: deliveryRouter,

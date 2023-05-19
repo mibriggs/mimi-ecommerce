@@ -9,14 +9,19 @@ import { SessionProvider } from 'next-auth/react';
 const App: AppType<{ session: Session | null }> = ({
 	Component,
 	pageProps: { session, ...pageProps },
-}) => {
+	...appProps
+}: AppProps) => {
+	const children = ['/auth/signin'].includes(appProps.router.pathname) ? (
+		<Component {...pageProps} />
+	) : (
+		<Layout>
+			<Component {...pageProps} />
+		</Layout>
+	);
+
 	return (
 		<SSRProvider>
-			<SessionProvider session={session}>
-				<Layout>
-					<Component {...pageProps} />
-				</Layout>
-			</SessionProvider>
+			<SessionProvider session={session}>{children}</SessionProvider>
 		</SSRProvider>
 	);
 };

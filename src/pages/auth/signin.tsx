@@ -9,10 +9,19 @@ import Image from 'next/image';
 import Facebook from '../../media/facebook.png';
 import Google from '../../media/google.png';
 import GitHub from '../../media/github.png';
+import MimiIcon from '../../media/mimi-icon.png';
+import { useRouter } from 'next/router';
+import { Itim } from 'next/font/google';
+
+const itim = Itim({
+	weight: '400',
+	subsets: ['latin'],
+});
 
 export default function SignIn({
 	providers,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+	const router = useRouter();
 	function getImageName(name: string) {
 		switch (name) {
 			case 'GitHub':
@@ -27,12 +36,24 @@ export default function SignIn({
 	}
 
 	return (
-		<>
-			{Object.values(providers).map((provider) => (
-				<div key={provider.name}>
+		<div className='flex h-screen flex-col items-center bg-eggshell'>
+			<button onClick={() => router.push('/')} className='self-baseline'>
+				<Image src={MimiIcon} alt={''} className='w-36 lg:w-44' />
+			</button>
+			<div className='flex h-4/6 w-2/6 flex-col items-center rounded-xl border-2 border-black bg-mimilicious text-black shadow-xl'>
+				<text>Sign In</text>
+				<textarea
+					className='w-3/6 justify-items-center rounded-3xl bg-eggshell'
+					placeholder='Email Address'
+				/>
+				<button className='w-1/6 rounded-full bg-oceanview'>Submit</button>
+				<text>Or</text>
+				{Object.values(providers).map((provider) => (
+					// <div key={provider.name}>
 					<button
+						key={provider.name}
 						onClick={() => signIn(provider.id)}
-						className='m-2 rounded-full bg-white px-5 py-1 text-black shadow-md'
+						className='m-2 w-3/6 rounded-full bg-white px-5 py-1 shadow-lg'
 					>
 						<div className='flex flex-row items-center'>
 							<Image
@@ -44,9 +65,11 @@ export default function SignIn({
 							Sign in with {provider.name}
 						</div>
 					</button>
-				</div>
-			))}
-		</>
+					// </div>
+				))}
+			</div>
+			<text className='text-black py-5'>Don&apos;t have an account yet? Learn more about us</text>
+		</div>
 	);
 }
 

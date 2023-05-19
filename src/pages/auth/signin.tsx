@@ -47,7 +47,7 @@ export default function SignIn({
 					placeholder='Email Address'
 				/>
 				<button className='w-1/6 rounded-full bg-oceanview'>Submit</button>
-				<text>Or</text>
+				<text>---------- Or ----------</text>
 				{Object.values(providers).map((provider) => (
 					// <div key={provider.name}>
 					<button

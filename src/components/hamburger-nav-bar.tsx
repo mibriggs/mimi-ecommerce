@@ -14,12 +14,7 @@ import {
 import localFont from 'next/font/local';
 import { Itim } from 'next/font/google';
 import { signIn, signOut, useSession } from 'next-auth/react';
-
-const customFont = localFont({ src: '../media/Mimi-Regular.ttf' });
-const itim = Itim({
-	weight: '400',
-	subsets: ['latin'],
-});
+import { customFont, itim } from '@/pages/_app';
 
 const HamburgerNavBar = () => {
 	const router = useRouter();

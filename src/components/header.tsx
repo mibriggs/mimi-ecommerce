@@ -1,6 +1,4 @@
-import localFont from 'next/font/local';
-
-const customFont = localFont({ src: '../media/Mimi-Regular.ttf' });
+import { customFont } from "@/pages/_app";
 
 export const HeaderComponent = () => {
 	return (

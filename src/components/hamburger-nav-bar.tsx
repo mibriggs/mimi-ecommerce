@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import { Key, useState } from 'react';
 import MimiIcon from '../media/mimi-icon.png';
 import HamburgerIcon from '../media/hamburger-icon.svg';
 import XIcon from '../media/x-icon.svg';
@@ -11,8 +10,6 @@ import {
 	Modal,
 	ModalOverlay,
 } from 'react-aria-components';
-import localFont from 'next/font/local';
-import { Itim } from 'next/font/google';
 import { signIn, signOut, useSession } from 'next-auth/react';
 import { customFont, itim } from '@/pages/_app';
 

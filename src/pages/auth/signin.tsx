@@ -11,7 +11,7 @@ import Google from '../../media/google.svg';
 import GitHub from '../../media/github.svg';
 import MimiIcon from '../../media/mimi-icon.png';
 import { useRouter } from 'next/router';
-import { ChangeEvent, useState, MouseEvent } from 'react';
+import { ChangeEvent, useState } from 'react';
 import { z } from 'zod';
 import toast from 'react-hot-toast';
 import { itim } from '../_app';
@@ -48,6 +48,7 @@ export default function SignIn({
 		} else {
 			console.log('valid email');
 			toast.success('Successfully created!');
+			signIn("email");
 		}
 		setEmail('');
 	};

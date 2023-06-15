@@ -4,8 +4,6 @@ import useViewport from '@/hooks/user-viewport';
 import HamburgerNavBar from '@/components/hamburger-nav-bar';
 
 const Layout = ({ children }: { children: JSX.Element }) => {
-	const BREAKPOINT = 620;
-	const { width, height } = useViewport();
 
 	return (
 		<div className='flex h-screen flex-col'>

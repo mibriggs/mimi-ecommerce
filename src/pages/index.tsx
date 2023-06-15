@@ -1,5 +1,4 @@
 import { Inter } from 'next/font/google';
-import { trpc } from '@/utils/trpc';
 import { NextPage } from 'next';
 import { signIn, signOut, useSession } from 'next-auth/react';
 

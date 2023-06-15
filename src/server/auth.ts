@@ -5,6 +5,7 @@ import { prisma } from './db/client';
 import GitHubProvider from 'next-auth/providers/github';
 import GoogleProvider from 'next-auth/providers/google';
 import FacebookProvider from 'next-auth/providers/facebook';
+import EmailProvider from 'next-auth/providers/email'
 
 //! Look into how all this works lol
 declare module 'next-auth' {
@@ -48,10 +49,21 @@ export const authOptions: NextAuthOptions = {
 			clientId: process.env.FACEBOOK_CLIENT_ID || '',
 			clientSecret: process.env.FACEBOOK_CLIENT_SECRET || '',
 		}),
+		EmailProvider({
+			server: {
+				host: process.env.EMAIL_SERVER_HOST || '',
+				port: Number(process.env.EMAIL_SERVER_PORT) || 0,
+				auth: {
+					user: process.env.EMAIL_SERVER_USER || '',
+					pass: process.env.EMAIL_SERVER_PASSWORD || '',
+				},
+			},
+			from: process.env.EMAIL_FROM || ''
+		}),
 	],
-	pages: {
-		signIn: '/auth/signin',
-	},
+	// pages: {
+	// 	signIn: '/auth/signin',
+	// },
 };
 
 export const getServerAuthSession = (ctx: {

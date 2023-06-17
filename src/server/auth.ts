@@ -61,9 +61,13 @@ export const authOptions: NextAuthOptions = {
 			from: process.env.EMAIL_FROM || ''
 		}),
 	],
-	// pages: {
-	// 	signIn: '/auth/signin',
-	// },
+	pages: {
+		signIn: '/auth/signin',
+		newUser: '/auth/signup',
+		verifyRequest: '/auth/verify',
+		// add newUser option?
+		// verify request option too
+	},
 };
 
 export const getServerAuthSession = (ctx: {

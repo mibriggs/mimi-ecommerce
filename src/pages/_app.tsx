@@ -20,7 +20,7 @@ const App: AppType<{ session: Session | null }> = ({
 	pageProps: { session, ...pageProps },
 	...appProps
 }: AppProps) => {
-	const children = ['/auth/signin'].includes(appProps.router.pathname) ? (
+	const children = ['/auth/signin', '/auth/signup', '/auth/verify'].includes(appProps.router.pathname) ? (
 		<Component {...pageProps} />
 	) : (
 		<Layout>

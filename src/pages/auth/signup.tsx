@@ -17,7 +17,7 @@ import toast from 'react-hot-toast';
 import { itim } from '../_app';
 import Link from 'next/link';
 
-export default function SignIn({
+export default function SignUp({
 	providers,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
 	const router = useRouter();
@@ -57,7 +57,7 @@ export default function SignIn({
 				<Image src={MimiIcon} alt={''} className='w-36 lg:w-44' />
 			</button>
 			<div className='flex h-4/6 w-2/6 flex-col items-center rounded-xl border-2 border-black bg-mimilicious text-black shadow-xl'>
-				<text className='m-8'>Sign In</text>
+				<text className='m-8'>Create an Account</text>
 				<input
 					className={`m-4 w-3/6 justify-items-center rounded-3xl bg-eggshell p-2 text-center`}
 					placeholder='Email Address'
@@ -86,7 +86,7 @@ export default function SignIn({
 					>
 						<div className='flex flex-row items-center'>
 							<Image src={getImageName(provider.name)} alt={'Provider logo'} />{' '}
-							Sign in with {provider.name}
+							Register with {provider.name}
 						</div>
 					</button>
 				))}
